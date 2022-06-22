@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+/* NAVBAR */
+
+nav {
+  height: 50px;
+}
+
+/* Direction Buttons */
+.dir-btn {
+  height: 100%;
+  width: calc(50px + 2vmin);
+  display: inline-block;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dir-btn.left {
+  background-image: url(icons/caret-left-fill.svg);
+}
+
+.dir-btn.right {
+  background-image: url(icons/caret-right-fill.svg);
+}
