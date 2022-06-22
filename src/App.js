@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./navbar/Navbar";
+import Navbar from "./Components/navbar/Navbar";
 import { ModeContext } from "./Context";
 import { useState } from "react";
 
