@@ -1,4 +1,4 @@
-import DirectionButton from "../DirectionButton";
+import DirectionButton from "./DirectionButton";
 import Display from "./Display";
 import Mode from "./Mode";
 
