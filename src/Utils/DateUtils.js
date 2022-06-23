@@ -1,21 +1,8 @@
 const hours = [...Array(24).keys()];
 
-const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const days = [...Array(7).keys()];
 
-const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+const months = [...Array(12).keys()];
 
 const addDays = (date, days) => {
   let newDate = new Date(date.valueOf());
