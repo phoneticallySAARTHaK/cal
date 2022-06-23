@@ -118,3 +118,33 @@ nav {
   background-image: url(icons/list.svg);
   margin-right: 0;
 }
+
+/* LAYOUT */
+
+.cell {
+  border: 1px gray solid;
+  height: 50px;
+}
+
+.header-cell {
+  background-color: antiquewhite;
+}
+
+/* Day */
+.day {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 3fr 7fr;
+  grid-auto-rows: min-content;
+}
+
+/* Week */
+
+.week {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 10% repeat(7, calc(90% / 7));
+  grid-auto-rows: min-content;
+}
