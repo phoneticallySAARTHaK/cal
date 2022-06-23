@@ -26,4 +26,15 @@ function getDayName(date, format) {
   return date.toLocaleDateString("en-US", { weekday: format });
 }
 
-export { days, months, dateIncrement, hours, getDayName };
+function isDateEqual(date1, date2) {
+  console.log(
+    date1.toLocaleDateString("en-US", { dateStyle: "short" }) ===
+      date2.toLocaleDateString("en-US", { dateStyle: "short" })
+  );
+  return (
+    date1.toLocaleDateString("en-US", { dateStyle: "short" }) ===
+    date2.toLocaleDateString("en-US", { dateStyle: "short" })
+  );
+}
+
+export { days, months, dateIncrement, hours, getDayName, isDateEqual };

@@ -139,6 +139,10 @@ nav {
   grid-auto-rows: min-content;
 }
 
+.current-hour {
+  background-color: greenyellow;
+}
+
 /* Week */
 
 .week {
