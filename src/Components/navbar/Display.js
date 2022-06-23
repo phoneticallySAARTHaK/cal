@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DateContext, ModeContext } from "../../Context";
+import { Context } from "../../Context";
 import {
   getShortDate,
   getMediumDate,
@@ -9,8 +9,7 @@ import {
 } from "../../Utils/DateUtils";
 
 function Display(props) {
-  const [mode] = useContext(ModeContext);
-  const [date] = useContext(DateContext);
+  const { mode, date } = useContext(Context)[0];
 
   let display;
   switch (mode) {

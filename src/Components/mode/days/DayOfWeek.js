@@ -4,23 +4,24 @@ import { hours, isDateEqual } from "../../../Utils/DateUtils";
 import Event from "../Event";
 
 function findEvent(events, date) {
-  return events.find((event) => event.date === date);
+  return events.find((event) => event.date.getHours() === date.getHours());
 }
 
 function DayOfWeek(props) {
-  const flag = isDateEqual(props.date, new Date());
-  const currentHour = new Date().getHours();
+  const currentDate = new Date();
+  const flag = isDateEqual(props.date, currentDate);
+  const currentHour = currentDate.getHours();
 
   const cells = hours.map((hour) => {
-    let dateTime = props.date;
-    dateTime.setHours(hour);
+    let dateTime = new Date(props.date.valueOf());
+    dateTime.setHours(hour, 0, 0);
     const event = findEvent(props.events, dateTime);
 
     return (
       <Cell
         date={dateTime}
-        key={dateTime}
-        className={flag && currentHour === hour ? "current-hour" : ""}
+        key={hour}
+        className={flag && currentHour === hour ? "now" : ""}
       >
         {event ? <Event {...event} /> : null}
       </Cell>
@@ -28,10 +29,10 @@ function DayOfWeek(props) {
   });
 
   return (
-    <>
-      <HeaderCell date={props.date} />
+    <div className="day-of-week">
+      <HeaderCell date={props.date} className={props.className} />
       {cells}
-    </>
+    </div>
   );
 }
 

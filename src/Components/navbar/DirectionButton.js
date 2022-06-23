@@ -1,13 +1,12 @@
 import { useContext } from "react";
-import { DateContext, ModeContext } from "../../Context";
+import { Context } from "../../Context";
 
 function DirectionButton(props) {
-  const mode = useContext(ModeContext)[0];
-  const setDate = useContext(DateContext)[1];
+  const [state, dispatch] = useContext(Context);
   return (
     <button
       className={`btn ${props.dir}`}
-      onClick={() => setDate({ mode: mode, dir: props.dir })}
+      onClick={() => dispatch({ ...state, dir: props.dir })}
     />
   );
 }

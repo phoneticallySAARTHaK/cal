@@ -1,15 +1,17 @@
 import { useContext } from "react";
-import { ModeContext } from "../../Context";
+import { Context } from "../../Context";
 
 function Mode(props) {
-  const [mode, setMode] = useContext(ModeContext);
-
-  function handleChange(event) {
-    setMode(event.target.value);
-  }
+  const [state, dispatch] = useContext(Context);
 
   return (
-    <select className="mode" value={mode} onChange={handleChange}>
+    <select
+      className="mode"
+      value={state.mode}
+      onChange={(e) =>
+        dispatch({ ...state, mode: e.target.value, dir: "mode-change" })
+      }
+    >
       <option value="day">Day</option>
       <option value="week">Week</option>
       <option value="month">Month</option>
