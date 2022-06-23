@@ -5,8 +5,8 @@
 }
 
 :root {
-  --btn-width: calc(50px + 1vmin);
-  --navbar-height: calc(50px + 1vmin);
+  --btn-width: calc(40px + 1vmin);
+  --navbar-height: calc(40px + 1vmin);
   --font-dynamic: calc(1rem + 1vmin);
 }
 
@@ -50,6 +50,7 @@ nav {
   width: 100;
   background-color: wheat;
   display: flex;
+  flex: 1 1 auto;
   align-self: flex-start;
   position: -webkit-sticky;
   position: sticky;
@@ -62,6 +63,7 @@ nav {
   display: inline-block;
   background-color: #61dafb;
   border: none;
+  border-radius: 10px;
   font-size: var(--font-dynamic);
   text-align: center;
 }
@@ -74,6 +76,8 @@ nav {
   min-width: fit-content;
   background-color: #61dafb;
   align-items: center;
+  border-radius: 10px;
+  margin: 0 5px;
 }
 
 .display > span {
@@ -92,10 +96,13 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 60px;
+  border-radius: 50%;
 }
 
-.dir-btn:hover {
-  border: 1px solid #61dafb;
+.btn:hover,
+.btn:active,
+.btn:focus {
+  border: 2px solid red;
 }
 
 .btn.left {
@@ -128,6 +135,24 @@ nav {
 
 .header-cell {
   background-color: antiquewhite;
+  height: 80px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+p {
+  margin: 5px;
+}
+
+.row-header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+}
+
+.row-header > * {
+  margin-top: 0;
 }
 
 /* Day */
@@ -139,7 +164,7 @@ nav {
   grid-auto-rows: min-content;
 }
 
-.current-hour {
+.now {
   background-color: greenyellow;
 }
 
@@ -149,6 +174,14 @@ nav {
   display: grid;
   margin: 0;
   padding: 0;
-  grid-template-columns: 10% repeat(7, calc(90% / 7));
+  grid-template-columns: 2fr 8fr;
+  grid-auto-rows: min-content;
+}
+
+.week-container {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(7, calc(100% / 7));
   grid-auto-rows: min-content;
 }

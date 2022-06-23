@@ -25,7 +25,7 @@ function HeaderCell(props) {
     </>
   ) : null;
 
-  return <Cell className="header-cell">{children}</Cell>;
+  return <Cell className={`header-cell ${props.className}`}>{children}</Cell>;
 }
 
 export default HeaderCell;
