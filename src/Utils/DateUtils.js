@@ -19,7 +19,7 @@ const nextWeek = (date) => addDays(date, 7);
 const prevWeek = (date) => addDays(date, -7);
 
 const nextMonth = (date) => {
-  let newDate = date;
+  let newDate = new Date(date.valueOf());
   newDate.setMonth(newDate.getMonth() + 1);
   return newDate;
 };
@@ -42,43 +42,41 @@ const prevYear = (date) => {
   return newDate;
 };
 
-function getDayName(date, format) {
-  return date.toLocaleDateString("en-US", { weekday: format });
-}
+const getDayName = (date, format) =>
+  date.toLocaleDateString("en-US", { weekday: format });
 
-function getShortDate(date) {
-  return date.toLocaleDateString("en-US", {
+const getShortDate = (date) =>
+  date.toLocaleDateString("en-US", {
     day: "numeric",
     month: "short",
     year: "2-digit",
   });
-}
 
-function getMediumDate(date) {
-  return date.toLocaleDateString("en-US", {
+const getMediumDate = (date) =>
+  date.toLocaleDateString("en-US", {
     dateStyle: "medium",
   });
-}
 
-function getMonth(date) {
-  return date.toLocaleDateString("en-US", {
+const getMonth = (date) =>
+  date.toLocaleDateString("en-US", {
     month: "long",
     year: "numeric",
   });
-}
 
-function getYear(date) {
-  return date.toLocaleDateString("en-US", { year: "numeric" });
-}
+const getYear = (date) => date.toLocaleDateString("en-US", { year: "numeric" });
 
-function isDateEqual(date1, date2) {
-  return date1.toLocaleDateString() === date2.toLocaleDateString();
-}
+const isDateEqual = (date1, date2) =>
+  date1.toLocaleDateString() === date2.toLocaleDateString();
+
+const resetWeekday = (date) => addDays(date, -date.getDay());
+
+const resetMonthDay = (date) => addDays(date, -date.getDate());
 
 export {
   days,
   months,
   hours,
+  addDays,
   nextDay,
   nextWeek,
   prevDay,
@@ -93,4 +91,6 @@ export {
   getMonth,
   getYear,
   isDateEqual,
+  resetWeekday,
+  resetMonthDay,
 };
