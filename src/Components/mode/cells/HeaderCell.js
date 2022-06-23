@@ -24,6 +24,7 @@ function HeaderCell(props) {
       {mode === "week" ? <p>{props.date.getDate()}</p> : null}
     </>
   ) : null;
+
   return <Cell className="header-cell">{children}</Cell>;
 }
 
