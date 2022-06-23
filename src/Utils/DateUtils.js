@@ -1,3 +1,5 @@
+const hours = [...Array(24).keys()];
+
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const months = [
@@ -14,8 +16,6 @@ const months = [
   "Nov",
   "Dec",
 ];
-
-const hours = [...Array(24).keys()];
 
 const addDays = (date, days) => {
   let newDate = new Date(date.valueOf());
@@ -59,6 +59,31 @@ function getDayName(date, format) {
   return date.toLocaleDateString("en-US", { weekday: format });
 }
 
+function getShortDate(date) {
+  return date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "2-digit",
+  });
+}
+
+function getMediumDate(date) {
+  return date.toLocaleDateString("en-US", {
+    dateStyle: "medium",
+  });
+}
+
+function getMonth(date) {
+  return date.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+}
+
+function getYear(date) {
+  return date.toLocaleDateString("en-US", { year: "numeric" });
+}
+
 function isDateEqual(date1, date2) {
   return date1.toLocaleDateString() === date2.toLocaleDateString();
 }
@@ -67,14 +92,18 @@ export {
   days,
   months,
   hours,
-  getDayName,
-  isDateEqual,
-  nextWeek,
   nextDay,
+  nextWeek,
   prevDay,
   prevWeek,
   nextMonth,
   prevMonth,
   nextYear,
   prevYear,
+  getDayName,
+  getShortDate,
+  getMediumDate,
+  getMonth,
+  getYear,
+  isDateEqual,
 };

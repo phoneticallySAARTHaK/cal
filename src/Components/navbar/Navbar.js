@@ -6,9 +6,9 @@ function Navbar(props) {
   return (
     <nav>
       <Mode />
-      <DirectionButton move={props.left} dir="left" />
+      <DirectionButton dir="left" />
       <Display />
-      <DirectionButton move={props.right} dir="right" />
+      <DirectionButton dir="right" />
       <button className="btn search" />
       <button className="btn sidebar-toggle" />
     </nav>
