@@ -23,7 +23,7 @@ const addDays = (date, days) => {
   return newDate;
 };
 
-const nextDate = (date) => addDays(date, 1);
+const nextDay = (date) => addDays(date, 1);
 
 const prevDay = (date) => addDays(date, -1);
 
@@ -70,7 +70,7 @@ export {
   getDayName,
   isDateEqual,
   nextWeek,
-  nextDate,
+  nextDay,
   prevDay,
   prevWeek,
   nextMonth,
