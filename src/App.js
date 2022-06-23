@@ -2,8 +2,6 @@ import "./App.css";
 import Navbar from "./Components/navbar/Navbar";
 import { ModeContext } from "./Context";
 import { useState } from "react";
-import Week from "./Components/mode/Week";
-import DayOfWeek from "./Components/mode/days/DayOfWeek";
 import Day from "./Components/mode/days/Day";
 
 function App() {
@@ -14,7 +12,6 @@ function App() {
       case "day":
         return <Day date={new Date()} events={[]} />;
       case "week":
-        return <Week date={new Date()} />;
       case "month":
       case "year":
       default:
