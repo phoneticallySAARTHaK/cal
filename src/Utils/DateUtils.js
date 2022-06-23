@@ -17,24 +17,36 @@ const months = [
 
 const hours = [...Array(24).keys()];
 
-const dateIncrement = (date, limit) => {
-  let next = (date + 1) % limit;
-  return next === 0 ? limit : next;
+const addDays = (date, days) => {
+  let newDate = date;
+  newDate.setDate(newDate.getDate() + days);
+  return newDate;
 };
+
+const nextDate = (date) => addDays(date, 1);
+
+const prevDay = (date) => addDays(date, -1);
+
+const nextWeek = (date) => addDays(date, 7);
+
+const prevWeek = (date) => addDays(date, -7);
 
 function getDayName(date, format) {
   return date.toLocaleDateString("en-US", { weekday: format });
 }
 
 function isDateEqual(date1, date2) {
-  console.log(
-    date1.toLocaleDateString("en-US", { dateStyle: "short" }) ===
-      date2.toLocaleDateString("en-US", { dateStyle: "short" })
-  );
-  return (
-    date1.toLocaleDateString("en-US", { dateStyle: "short" }) ===
-    date2.toLocaleDateString("en-US", { dateStyle: "short" })
-  );
+  return date1.toLocaleDateString() === date2.toLocaleDateString();
 }
 
-export { days, months, dateIncrement, hours, getDayName, isDateEqual };
+export {
+  days,
+  months,
+  hours,
+  getDayName,
+  isDateEqual,
+  nextWeek,
+  nextDate,
+  prevDay,
+  prevWeek,
+};
