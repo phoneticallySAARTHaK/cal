@@ -31,6 +31,30 @@ const nextWeek = (date) => addDays(date, 7);
 
 const prevWeek = (date) => addDays(date, -7);
 
+const nextMonth = (date) => {
+  let newDate = date;
+  newDate.setMonth(newDate.getMonth() + 1);
+  return newDate;
+};
+
+const prevMonth = (date) => {
+  let newDate = date;
+  newDate.setMonth(newDate.getMonth() - 1);
+  return newDate;
+};
+
+const nextYear = (date) => {
+  let newDate = date;
+  newDate.setFullYear(newDate.getFullYear() + 1);
+  return newDate;
+};
+
+const prevYear = (date) => {
+  let newDate = date;
+  newDate.setFullYear(newDate.getFullYear() - 1);
+  return newDate;
+};
+
 function getDayName(date, format) {
   return date.toLocaleDateString("en-US", { weekday: format });
 }
@@ -49,4 +73,8 @@ export {
   nextDate,
   prevDay,
   prevWeek,
+  nextMonth,
+  prevMonth,
+  nextYear,
+  prevYear,
 };
