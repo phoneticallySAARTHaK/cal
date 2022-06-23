@@ -18,7 +18,7 @@ const months = [
 const hours = [...Array(24).keys()];
 
 const addDays = (date, days) => {
-  let newDate = date;
+  let newDate = new Date(date.valueOf());
   newDate.setDate(newDate.getDate() + days);
   return newDate;
 };
@@ -38,19 +38,19 @@ const nextMonth = (date) => {
 };
 
 const prevMonth = (date) => {
-  let newDate = date;
+  let newDate = new Date(date.valueOf());
   newDate.setMonth(newDate.getMonth() - 1);
   return newDate;
 };
 
 const nextYear = (date) => {
-  let newDate = date;
+  let newDate = new Date(date.valueOf());
   newDate.setFullYear(newDate.getFullYear() + 1);
   return newDate;
 };
 
 const prevYear = (date) => {
-  let newDate = date;
+  let newDate = new Date(date.valueOf());
   newDate.setFullYear(newDate.getFullYear() - 1);
   return newDate;
 };
