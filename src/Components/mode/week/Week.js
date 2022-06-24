@@ -1,4 +1,4 @@
-import { days, addDays, isDateEqual } from "../../../Utils/DateUtils";
+import { days, addDays, inBetween, nextWeek } from "../../../Utils/DateUtils";
 import RowHeaderContainer from "../cells/RowHeaderContainer";
 import DayOfWeek from "../days/DayOfWeek";
 
@@ -9,7 +9,8 @@ function Week(props) {
   );
 
   const currentDate = new Date();
-  const flag = isDateEqual(props.date, currentDate);
+  const flag = inBetween(props.date, currentDate, nextWeek(props.date));
+  console.log(flag);
   const currentDay = currentDate.getDay();
 
   const dayCols = days.map((day) => (

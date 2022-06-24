@@ -72,6 +72,8 @@ const resetWeekday = (date) => addDays(date, -date.getDay());
 
 const resetMonthDay = (date) => addDays(date, -date.getDate());
 
+const inBetween = (from, test, to) => from <= test && test <= to;
+
 export {
   days,
   months,
@@ -93,4 +95,5 @@ export {
   isDateEqual,
   resetWeekday,
   resetMonthDay,
+  inBetween,
 };
