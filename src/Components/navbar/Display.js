@@ -29,11 +29,6 @@ function Display(props) {
       display = "";
   }
 
-  return (
-    <div className="display">
-      <span>{display}</span>
-    </div>
-  );
+  return <button className="display">{display}</button>;
 }
-
 export default Display;
