@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Context } from "../../Context";
+import { DateContext } from "../../Context";
 
 function DirectionButton(props) {
-  const [state, dispatch] = useContext(Context);
+  const [state, dispatch] = useContext(DateContext);
   return (
     <button
       className={`btn ${props.dir}`}

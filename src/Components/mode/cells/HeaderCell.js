@@ -1,7 +1,7 @@
 import Cell from "./Cell";
 import { getDayName } from "../../../Utils/DateUtils";
 import { useContext } from "react";
-import { Context } from "../../../Context";
+import { DateContext } from "../../../Context";
 
 function getDayFormat(mode) {
   switch (mode) {
@@ -17,7 +17,7 @@ function getDayFormat(mode) {
 }
 
 function HeaderCell(props) {
-  const { mode } = useContext(Context)[0];
+  const { mode } = useContext(DateContext)[0];
   const children = props.date ? (
     <>
       <p>{getDayName(props.date, getDayFormat(mode))}</p>

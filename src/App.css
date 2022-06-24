@@ -121,6 +121,11 @@ nav {
   height: 50px;
 }
 
+.cell:focus,
+.cell:active {
+  background-color: #61dafb;
+}
+
 .header-cell {
   background-color: antiquewhite;
   height: 80px;
@@ -136,7 +141,7 @@ p {
 .row-header {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .row-header > * {

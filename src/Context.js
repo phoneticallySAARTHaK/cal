@@ -1,3 +1,4 @@
 import { createContext } from "react";
 
-export const Context = createContext({});
+export const DateContext = createContext();
+export const EventContext = createContext();
