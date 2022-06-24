@@ -8,6 +8,7 @@ import {
   dateReducer,
   displayLayout,
 } from "./Utils/StateUtils";
+import Sidebar from "./Components/sidebar/Sidebar";
 
 function App() {
   const eventState = useReducer(eventReducer, () => {
@@ -27,6 +28,9 @@ function App() {
             <Navbar />
           </header>
           <main>{displayLayout(state)}</main>
+          <aside>
+            <Sidebar />
+          </aside>
         </EventContext.Provider>
       </DateContext.Provider>
     </div>

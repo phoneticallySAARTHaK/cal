@@ -12,6 +12,7 @@
 
 .App {
   text-align: center;
+  margin-top: var(--navbar-height);
 }
 
 .App-logo {
@@ -53,9 +54,10 @@ nav {
   flex: 1 1 auto;
   align-self: flex-start;
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
 }
 
 .mode {
@@ -117,12 +119,12 @@ nav {
 /* LAYOUT */
 
 .cell {
-  border: 1px gray solid;
+  border: 1px lightgray solid;
   height: 50px;
 }
 
-.cell:focus,
-.cell:active {
+.date-cell:focus,
+.date-cell:active {
   background-color: #61dafb;
 }
 
@@ -177,4 +179,44 @@ p {
   padding: 0;
   grid-template-columns: repeat(7, calc(100% / 7));
   grid-auto-rows: min-content;
+}
+
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  top: var(--navbar-height);
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background-color: burlywood;
+  box-shadow: -50vw 0px rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 15px;
+  z-index: 1;
+}
+
+form {
+  height: 100%;
+}
+
+form > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 2rem;
+  margin: 10px 0;
+  align-items: center;
+}
+
+form > div > label {
+  text-align: right;
+  margin-right: 10%;
+}
+
+form > div * {
+  padding: 5px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
 }
