@@ -70,7 +70,7 @@ function displayLayout({ mode, date }) {
     case "month":
     case "year":
     default:
-      return;
+      return <p>TO DO</p>;
   }
 }
 
