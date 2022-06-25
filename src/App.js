@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./Components/navbar/Navbar";
 import { DateContext, EventContext } from "./Context";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import {
   getStoredEvents,
   eventReducer,
@@ -11,7 +11,7 @@ import {
 import Sidebar from "./Components/sidebar/Sidebar";
 
 function App() {
-  const eventState = useReducer(eventReducer, () => {
+  const [events, modifyEvents] = useReducer(eventReducer, () => {
     return getStoredEvents();
   });
 
@@ -20,16 +20,21 @@ function App() {
     mode: "day",
   });
 
+  const [sidebarState, setsidebarState] = useState({
+    isVisible: false,
+    date: state.date,
+  });
+
   return (
     <div className="App">
       <DateContext.Provider value={[state, modifyDate]}>
-        <EventContext.Provider value={eventState}>
+        <EventContext.Provider value={setsidebarState}>
           <header className="App-header">
             <Navbar />
           </header>
           <main>{displayLayout(state)}</main>
           <aside>
-            <Sidebar />
+            <Sidebar state={sidebarState} setState={setsidebarState} />
           </aside>
         </EventContext.Provider>
       </DateContext.Provider>

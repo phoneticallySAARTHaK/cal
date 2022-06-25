@@ -61,10 +61,15 @@ const dateReducer = (state, action) => {
   }
 };
 
-function displayLayout({ mode, date }) {
+function displayLayout({ mode, date }, events) {
   switch (mode) {
     case "day":
-      return <Day date={date} events={[]} />;
+      return (
+        <Day
+          date={date}
+          events={[{ title: "Example", date: new Date(), range: 2 }]}
+        />
+      );
     case "week":
       return <Week date={date} events={[]} />;
     case "month":

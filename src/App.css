@@ -195,6 +195,13 @@ p {
   z-index: 1;
 }
 
+@media screen and (min-width: 600px) {
+  .sidebar {
+    width: 360px;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
 form {
   height: 100%;
 }
@@ -219,4 +226,8 @@ form > div * {
 .button-row {
   display: flex;
   justify-content: space-between;
+}
+
+.button-row button {
+  margin: 0 5%;
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form(props) {
+function EventForm(props) {
   const [isEnd, setEnd] = useState(true);
   const id = isEnd ? "End" : "Range";
 
@@ -40,4 +40,4 @@ function Form(props) {
   );
 }
 
-export default Form;
+export default EventForm;
